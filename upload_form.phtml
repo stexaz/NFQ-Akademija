@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pirmas namų darbas - paveikslėlio įkėlimas</title>
+</head>
+<body>
+<div id="wrap">
+    {$image}
+    <div class="message">
+        {$message}
+    </div>
+    <div class="form">
+        <form action="/ikelti-paveiksleli" method="post" enctype="multipart/form-data">
+            Pasirinkite failą: <input type="file" name="image"/><br/>
+            <input type="submit" value="Įkelti"/>
+        </form>
+    </div>
+    <div class="info">
+        <ul>
+            <li>Maksimalus paveikslėlio dydis: {$max_size}</li>
+            <li>Palaikomi formatai: {$file_types}</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
