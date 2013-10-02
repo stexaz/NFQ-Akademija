@@ -23,3 +23,5 @@ Papildomai sudiegti paketus ar vėliau patikrinti pasiekitimus infrastruktūrai 
 Prisijungti prie virtualios mašinos galima naudojant komandą:
 
     vagrant ssh
+
+Darant antrą namų darbą, pakeistas readme failiukas.
