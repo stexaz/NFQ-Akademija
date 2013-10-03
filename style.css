@@ -1,0 +1,62 @@
+body {
+    background-color: #e0e6dd;
+}
+
+#wrap {
+    margin: 0 auto;
+    width: 700px;
+    background-color: rgba(180, 186, 178, 0.81);
+    padding: 10px;
+}
+
+.message {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #097aff;
+    background-color: rgba(9, 122, 255, 0.36);
+}
+
+.message.error {
+    border: 1px solid #ff7e6a;
+    background-color: rgba(255, 126, 106, 0.37);
+}
+
+.message.ok {
+    border: 1px solid #16d100;
+    background-color: rgba(22, 209, 0, 0.36);
+}
+
+.messages, .img {
+    text-align: center;
+    margin: 10px;
+}
+
+.info {
+    border: 1px solid #097aff;
+    background-color: rgba(9, 122, 255, 0.36);
+    box-shadow: 0px 1px 31px rgb(97, 97, 97);
+}
+
+.form {
+    background-color: rgba(180, 186, 178, 0.81);
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 31px rgb(97, 97, 97);
+    border-radius: 2px;
+    padding: 40px;
+}
+
+.form input[type=submit] {
+    display: block;
+    float: right;
+}
+
+footer {
+    padding: 5px;
+    font-style: italic;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 600px;
+}
