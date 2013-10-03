@@ -2,17 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
     <title>Pirmas namų darbas - paveikslėlio įkėlimas</title>
 </head>
 <body>
 <div id="wrap">
     {$image}
-    <div class="message">
-        {$message}
+    <div class="messages">
+        <span class="message {$message_type}">
+            {$message}
+        </span>
     </div>
     <div class="form">
-        <form action="/ikelti-paveiksleli" method="post" enctype="multipart/form-data">
-            Pasirinkite failą: <input type="file" name="image"/><br/>
+        <form action="" method="post" enctype="multipart/form-data">
+            Pasirinkite failą: <input type="file" name="image" accept="{$accept}"/><br/>
             <input type="submit" value="Įkelti"/>
         </form>
     </div>
@@ -22,6 +25,8 @@
             <li>Palaikomi formatai: {$file_types}</li>
         </ul>
     </div>
+    <footer>Copyright 2013 Andrius Petrauskis</footer>
 </div>
+
 </body>
 </html>
