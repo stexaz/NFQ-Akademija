@@ -63,7 +63,7 @@ apache::vhost { 'nfqakademija.dev':
   serveraliases => [
     'nfqakademija.dev'
   ],
-  docroot       => '/var/www/web/',
+  docroot       => '/var/www/public/',
   port          => '80',
   env_variables => [
 ],

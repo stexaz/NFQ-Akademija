@@ -1,0 +1,23 @@
+{% extends 'base.twig' %}
+{% block content %}
+    <div class="container">
+        <h2>Create new album</h2>
+        {% block message %}{% if message %}<div class="message">{{ message }}</div>{% endif %}{% endblock %}
+        <form action="/album/add" method="post">
+
+            <div class="control-group ">
+                <label class="control-label" for="title">Title: </label>
+                <div class="controls">
+                    <input name="title" id="title" placeholder="Name this photo"/>
+                </div>
+            </div>
+            <div class="control-group ">
+                <label class="control-label" for="description">Description: </label>
+                <div class="controls">
+                    <textarea name="description" id="description"></textarea>
+                </div>
+            </div>
+            <input class="control-label" type="submit" value="Create"/>
+        </form>
+    </div>
+{% endblock %}

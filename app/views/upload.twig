@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+{% block content %}
+<div class="container">
+    <h2>Upload a photo</h2>
+    {% block message %}{% if message %}<div class="message">{{ message }}</div>{% endif %}{% endblock %}
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="control-group ">
+            <label class="control-label" for="photo">Select a photo: </label>
+            <div class="controls">
+                <input name="photo" id="photo" type="file"/>
+            </div>
+        </div>
+
+        <div class="control-group ">
+            <label class="control-label" for="title">Title: </label>
+            <div class="controls">
+                <input name="title" id="title" placeholder="Name this photo"/>
+            </div>
+        </div>
+
+        <div class="control-group ">
+            <label class="control-label" for="title">Album: </label>
+            <div class="controls">
+                <select name="album" id="album">
+                    {% for album in albums %}
+                    <option value="{{ album.id }}">{{ album.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="control-group ">
+            <label class="control-label" for="description">Description: </label>
+            <div class="controls">
+                <textarea name="description" id="description"></textarea>
+            </div>
+        </div>
+            <input class="control-label" type="submit" value="Upload!"/>
+    </form>
+</div>
+{% endblock %}

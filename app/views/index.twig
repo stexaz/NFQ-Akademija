@@ -1,0 +1,10 @@
+{% extends 'base.twig' %}
+{% block content %}
+{% if albums %}
+    {% for album in albums %}
+        <a href="/album/{{ album.id }}">{% if album.thumb %}<img src="{{ album.thumb }}" alt="{{ album.title }}"/>{% else %}{{ album.title }}{% endif %}</a>
+    {% endfor %}
+    {% else %}
+    No photos uploaded so far
+    {% endif %}
+{% endblock %}
