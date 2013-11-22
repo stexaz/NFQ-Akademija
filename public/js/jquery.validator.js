@@ -21,7 +21,8 @@
 
     ValidateUser.prototype.checkUser = function()
     {
-        $.post('/user_check', {username: this.element.attr('value')}, bind(this._handleResponse, this),'json');
+        this.element.removeClass('invalid');
+        $.post('/user_check', {username: this.element.val()}, bind(this._handleResponse, this),'json');
     };
 
     ValidateUser.prototype._handleResponse = function(data)
