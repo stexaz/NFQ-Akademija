@@ -1,0 +1,36 @@
+{% extends 'base.twig' %}
+{% block header %} {% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h2 class="">Please sign in</h2>
+        {% block message %}
+            {% if message %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endblock %}
+        <form class="form-signin form-horizontal" method="post" action="/users/register">
+
+            <div class="control-group ">
+                <label class="control-label" for="email">Username:</label>
+                <div class="controls">
+                    <input type="text" id="username" name="username" placeholder="Username" value="">
+                </div>
+            </div>
+            <div class="control-group ">
+                <label class="control-label" for="password">Password:</label>
+                <div class="controls">
+                    <input type="password" id="password" name="password" placeholder="Password" value="">
+                </div>
+            </div>
+            <div class="control-group ">
+                <label class="control-label" for="email">Email:</label>
+                <div class="controls">
+                    <input type="email" id="email" name="email" placeholder="Email" value="">
+                </div>
+            </div>
+            <button class="btn btn-large btn-primary" type="submit">Register</button>
+        </form>
+    </div>
+
+{% endblock %}

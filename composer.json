@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"twig/twig": "1.*",
-		"rcrowe/twigbridge": "*"
+		"rcrowe/twigbridge": "*",
+        "artdarek/oauth-4-laravel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

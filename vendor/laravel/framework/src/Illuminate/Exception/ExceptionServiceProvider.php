@@ -56,9 +56,19 @@ class ExceptionServiceProvider extends ServiceProvider {
 	{
 		$this->app['exception.plain'] = $this->app->share(function($app)
 		{
-			$handler = new KernelHandler($app['config']['app.debug']);
+			// If the application is running in a console environment, we will just always
+			// use the debug handler as there is no point in the console ever returning
+			// out HTML. This debug handler always returns JSON from the console env.
+			if ($app->runningInConsole())
+			{
+				return $app['exception.debug'];
+			}
+			else
+			{
+				$handler = new KernelHandler($app['config']['app.debug']);
 
-			return new SymfonyDisplayer($handler);
+				return new SymfonyDisplayer($handler);
+			}
 		});
 	}
 
@@ -137,7 +147,7 @@ class ExceptionServiceProvider extends ServiceProvider {
 	protected function registerPrettyWhoopsHandler()
 	{
 		$me = $this;
-		
+
 		$this->app['whoops.handler'] = $this->app->share(function() use ($me)
 		{
 			with($handler = new PrettyPageHandler)->setEditor('sublime');
@@ -171,7 +181,9 @@ class ExceptionServiceProvider extends ServiceProvider {
 	 */
 	protected function getResourcePath()
 	{
-		return __DIR__.'/resources';
+		$base = $this->app['path.base'];
+
+		return $base.'/vendor/laravel/framework/src/Illuminate/Exception/resources';
 	}
 
 }

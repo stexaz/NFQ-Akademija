@@ -12,3 +12,6 @@ Route::get('/login', 'LoginController@loginGet');
 
 Route::post('/login', 'LoginController@loginPost');
 
+Route::controller('users', 'UsersController');
+
+Route::controller('photo', 'PhotoController');

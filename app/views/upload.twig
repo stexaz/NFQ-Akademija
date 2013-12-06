@@ -3,9 +3,9 @@
 <div class="container">
     <h2>Upload a photo</h2>
     {% block message %}{% if message %}<div class="message">{{ message }}</div>{% endif %}{% endblock %}
-    <form action="/upload" method="post" enctype="multipart/form-data">
+    <form action="/photo/upload" method="post" enctype="multipart/form-data" id="my-awesome-dropzone" class="dropzone">
         <div class="control-group ">
-            <label class="control-label" for="photo">Select a photo: </label>
+            <label class="control-label" for="photo">Select a photos: </label>
             <div class="controls">
                 <input name="photo" id="photo" type="file"/>
             </div>
@@ -35,6 +35,14 @@
                 <textarea name="description" id="description"></textarea>
             </div>
         </div>
+
+        <div class="control-group ">
+            <label class="control-label" for="tags">Tags: </label>
+            <div class="controls">
+                <input name="tags" id="tags"/>
+            </div>
+        </div>
+
             <input class="control-label" type="submit" value="Upload!"/>
     </form>
 </div>
